@@ -4,11 +4,14 @@ import { ConnectionComponent } from './component/connection/connection.component
 import { HomeComponent } from './component/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CartComponent } from './component/cart/cart.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'connection', component: ConnectionComponent},
-  {path: 'formulaire-inscription', component: FormulaireInscriptionComponent}
+  {path: 'formulaire-inscription', component: FormulaireInscriptionComponent},
+  {path: 'cart', component: CartComponent},
+  {path: '', component: HomeComponent}
 ];
 
 @NgModule({

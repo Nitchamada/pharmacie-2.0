@@ -15,7 +15,9 @@ import localeFr from '@angular/common/locales/fr';
 import { CarouselComponent } from './component/carousel/carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormulaireInscriptionComponent } from './component/formulaire-inscription/formulaire-inscription.component';
+import { CartComponent } from './component/cart/cart.component';
 
+import {HttpClientModule} from '@angular/common/http' ; 
 
 registerLocaleData(localeFr,'fr');
 
@@ -27,14 +29,16 @@ registerLocaleData(localeFr,'fr');
     ConnectionComponent,
     HomeComponent,
     CarouselComponent,
-    FormulaireInscriptionComponent
+    FormulaireInscriptionComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/api.service';
 import { Imedicament } from './medicament';
 
 @Component({
@@ -8,6 +9,13 @@ import { Imedicament } from './medicament';
 })
 export class HomeComponent implements OnInit {
   public title='Liste des médicaments'
+
+  constructor(private service:ApiService){}
+  tab:any[]=[]
+  getdata(){this.service.getmedicament().subscribe((data:any)=>{
+    
+    this.filtretab = this.tab = data.data
+  }) }
 
   public getdate(){
       return new Date();
@@ -267,16 +275,25 @@ export class HomeComponent implements OnInit {
   public filteredMedicaments: Imedicament[]=[];
 
   ngOnInit(): void {
+      this.getdata()
       this.filteredMedicaments=this.medicaments;
   }
 
-  private _medicamentFilter='mot';
+    filtretab:any[]=[]
+    filtre(){
+      this.filtretab=this.tab.filter(data=>data.nom.toLocaleLowerCase().includes(this.msg.toLocaleLowerCase()))
+    }
+
+   _medicamentFilter:any;
+    msg:any;
+
 
   public get medicamentFilter():string {
       return this._medicamentFilter
   }
 
-  public set medicamentFilter(filter:string){
+  public set medicamentFilter(filter:string)
+  {
       this.medicamentFilter=filter;
       this.filteredMedicaments=this.medicamentFilter ? this.filterMedicaments (this.medicamentFilter): this.medicaments;
   }
@@ -290,3 +307,5 @@ export class HomeComponent implements OnInit {
   return res;
   }
 }
+
+

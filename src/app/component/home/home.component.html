@@ -16,20 +16,19 @@
             <div class="col-md-4"> <span>Filtre actuel: </span><b>{{medicamentFilter}}</b></div>
             <!-- <div class="col-md-8"> <input type="text" class="form-control" [ngModel]="medicamentFilter"
           (ngModelChange)="medicamentFilter=$event"></div> -->
-            <div class="col-md-8"><input type="text" class="form-control" [(ngModel)]="medicamentFilter"></div>
+            <div class="col-md-8"><input type="text" class="form-control" (keyup)="filtre()" [(ngModel)]="msg"></div>
         </div>
     </div>
 
     <br>
-
     <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col" *ngFor="let medicament of filteredMedicaments">
+        <div class="col" *ngFor="let elements of filtretab">
             <div class="card h-100">
-                <img [src]="medicament.image" class="card-img-top" [title]="medicament.nom | uppercase" [alt]="medicament.nom" height="180px" width="50px">
+                <img [src]="elements.img" class="card-img-top" [title]="elements.nom | uppercase" [alt]="elements.nom" height="180px" width="50px">
                 <div class="card-body">
-                    <h5 class="card-title">{{medicament.nom}}</h5>
-                    <p class="card-text">{{medicament.description}}</p>
-                    <p class="card-text">{{medicament.prix | currency:'DT': 'symbol': '1.2-2': 'fr'}} </p>
+                    <h5 class="card-title">{{elements.nom}}</h5>
+                    <p class="card-text">{{elements.desc}}</p>
+                    <p class="card-text">{{elements.prix | currency:'DT': 'symbol': '1.2-2': 'fr'}} </p>
 
                     <a href="#" type="button" class="btn btn-outline-success">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
@@ -44,4 +43,5 @@
             </div>
         </div>
     </div>
+    <br>
 </div>
