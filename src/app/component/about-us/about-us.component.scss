@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    margin-top: -100px;
+}
+
+.about {
+    background: url(../../../assets/pharmashop1.jpg) no-repeat left;
+    background-size: 700px 500px;
+    background-color: transparent;
+    background-position: 20px;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+.inner-section {
+    width: 55%;
+    height: 450px;
+    float: right;
+    background-color: #1abc9c;
+    padding: 140px;
+    box-shadow: 13px 12px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10% 30% 50% 70%;
+    margin-right: 30px;
+}
+
+.inner-section h1 {
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+    margin-top: -110px;
+}
+
+.text {
+    font-size: 13px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+    margin-top: -20px;
+}
+
+.skills button {
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 8px;
+    width: 200px;
+    cursor: pointer;
+    padding: 0.6rem 1.3rem;
+    background-color: #fff;
+    border: 2px solid #fafafa;
+    font-size: 0.95rem;
+    color: #1abc9c;
+    line-height: 1;
+    border-radius: 25px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0;
+}
+
+.skills button:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+@media screen and (max-width:1200px) {
+    .inner-section {
+        padding: 80px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .about {
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .inner-section {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .about {
+        padding: 0;
+    }
+    .inner-section {
+        padding: 60px;
+    }
+    .skills button {
+        font-size: 19px;
+        padding: 5px;
+        width: 160px;
+    }
+}

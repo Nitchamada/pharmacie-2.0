@@ -17,7 +17,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormulaireInscriptionComponent } from './component/formulaire-inscription/formulaire-inscription.component';
 import { CartComponent } from './component/cart/cart.component';
 
-import {HttpClientModule} from '@angular/common/http' ; 
+import {HttpClientModule} from '@angular/common/http';
+import { AboutUsComponent } from './component/about-us/about-us.component';
+import { CgvComponent } from './component/cgv/cgv.component';
+import { FirstComponent } from './component/first/first.component';
+import { ContactUsComponent } from './component/contact-us/contact-us.component' ; 
 
 registerLocaleData(localeFr,'fr');
 
@@ -30,7 +34,11 @@ registerLocaleData(localeFr,'fr');
     HomeComponent,
     CarouselComponent,
     FormulaireInscriptionComponent,
-    CartComponent
+    CartComponent,
+    AboutUsComponent,
+    CgvComponent,
+    FirstComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
